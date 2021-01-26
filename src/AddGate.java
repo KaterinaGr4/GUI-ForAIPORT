@@ -6,7 +6,9 @@ import  javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.ComboBox;
-
+/**
+ * @class AddGate adding a new gate to a specific airport
+ */
 public class AddGate {
     protected static TextField textAreaGate = new TextField();
     protected static ComboBox<String> icao = new ComboBox<>();
@@ -29,7 +31,11 @@ public class AddGate {
         Button okButton = new Button("OK");
         SetStyles.setStyleForButtons(okButton, 26, 30);
         okButton.setOnMouseClicked(event -> {
-            CheckAddingInput.checkGate(textAreaGate,stage);
+            try {
+                CheckAddingInput.checkGate(textAreaGate,stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             CheckAddingInput.checkICAO(icao,stage);
         });
 

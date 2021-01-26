@@ -5,7 +5,9 @@ import  javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.control.TextField;
 import  javafx.scene.control.Button;
-
+/**
+ * @class AddAirport adding a new airport
+ */
 public class AddAirport {
     protected static TextField textAreaName = new TextField();
     protected static TextField icao = new TextField();
@@ -23,9 +25,7 @@ public class AddAirport {
         SetStyles.setPosition(icao,4,0);
         Button okButton = new Button("OK");
         SetStyles.setStyleForButtons(okButton, 12,20 );
-        okButton.setOnMouseClicked(event -> {
-            CheckAddingInput.checkAirport(textAreaName,icao,stage);
-        });
+        okButton.setOnMouseClicked(event -> CheckAddingInput.checkAirport(textAreaName,icao,stage));
 
         gridPane.getChildren().addAll(textAreaName,airportName,icao,airportICAO,okButton);
 

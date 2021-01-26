@@ -6,7 +6,9 @@ import  javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.ComboBox;
-
+/**
+ * @class AddStores adding a new store to a specific airport
+ */
 public class AddStores {
     protected static TextField textAreaStore = new TextField();
     protected static ComboBox<String> icao = new ComboBox<>();
@@ -29,10 +31,13 @@ public class AddStores {
         Button okButton = new Button("OK");
         SetStyles.setStyleForButtons(okButton, 26, 30);
         okButton.setOnMouseClicked(event -> {
-            CheckAddingInput.checkGate(textAreaStore,stage);
+            try {
+                CheckAddingInput.checkGate(textAreaStore,stage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             CheckAddingInput.checkICAO(icao,stage);
         });
-
         gridPane.getChildren().addAll(textAreaStore,icao,gateName,airportcode,okButton);
     }
 

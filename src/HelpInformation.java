@@ -1,6 +1,10 @@
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-
+/**
+ * @class HelpInformation provide a dialog window
+ * with helpful information about the application
+ * and its use.
+ */
 public class HelpInformation {
 
     public static void start(GridPane gridPane) {

@@ -61,6 +61,10 @@ public class AddingData {
            stage.close();
            AddStores.newStore();
        });
+       airportStuff.setOnMouseClicked(event -> {
+           stage.close();
+           AddAirportStuff.newAirportStuff();
+       });
        gridPane.getChildren().addAll(message, instructions,airport, flight, ticket, flightCrew,
                airportStuff, gate, store, vistStore);
     }

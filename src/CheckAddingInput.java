@@ -159,8 +159,11 @@ public class CheckAddingInput {
         }
     }
 
-    public static void checkGate(TextField gate, Stage stage) {
-        if (gate.getText().equals("")) {
+    public static void checkGate(TextField gate, Stage stage) throws Exception {
+        char ch = 0;
+        try {
+            ch = gate.getText().charAt(0);
+        } catch (StringIndexOutOfBoundsException e) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Null Data");
             alert.setContentText("You forgot to enter gate");
@@ -170,7 +173,6 @@ public class CheckAddingInput {
                 stage.show();
             }
         }
-        char ch = gate.getText().charAt(0);
         if (gate.getText().length() != 1 || !Character.isUpperCase(ch)) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Invalid Data");

@@ -1,12 +1,5 @@
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.scene.layout.*;
-import java.io.FileInputStream;
-import javafx.scene.image.Image;
-import javafx.scene.Scene;
-import javafx.scene.paint.Paint;
-import javafx.geometry.Pos;
-import javafx.scene.text.Font;
 
 public class OkButtonHandle  {
     private static boolean checkSSN = false;
@@ -153,30 +146,14 @@ public class OkButtonHandle  {
         if (result.isPresent() && (result.get() == ButtonType.OK)) {
             primaryStage.close();
 
-            // Create a new waiting scene
-            //  This scene must stay active while the application searching for the users COVID-contacts
 
-            GridPane gridPane = new GridPane();
-            gridPane.setHgap(1);
-            gridPane.setVgap(10);
-
-            Background background = SetStyles.setBackground("globe-and-airplane-logo-or-icon-vector-5271553.jpg") ;
-            Label label = new Label("We are processing your data...PLEASE WAIT");
-            SetStyles.setStyleForLabel(label, 1, Pos.TOP_CENTER, Paint.valueOf("black"), Font.font("Arial Rounded MT Bold", 24));
-            gridPane.getChildren().addAll(label);
-            gridPane.setBackground(background);
-            primaryStage.setScene(new Scene(gridPane, 1000, 800));
-            primaryStage.show();
-           // Output.employeeNotFound();
-
-//            TESTING FOR OUTPUT CLASS (DONT NEED THEM HERE)
-
+ //           TESTING FOR OUTPUT CLASS (DONT NEED THEM HERE)
 //            Output.employeeNotFound();
 //            Output.icaoNotFound();
 //            Output.dateOutOfBounds();
-          java.util.ArrayList<String> array1 = new java.util.ArrayList<>();
-//           array1.add("Katerina Mavrika 6987544356");
-//           array1.add("Despoina Karagianni 6977321456 ");
+//            java.util.ArrayList<String> array1 = new java.util.ArrayList<>();
+//            array1.add("Katerina Mavrika 6987544356");
+//            array1.add("Despoina Karagianni 6977321456 ");
 //            array1.add("Giannis Panos 6900456678");
 //            array1.add("Alexandros Politos 6987754680");
 //            array1.add("Maria Tounikou 6900551123");
@@ -184,8 +161,8 @@ public class OkButtonHandle  {
 //            array1.add("Afroditi Iliopoulou 6987745600");
 //            array1.add("Vuron Theodoropoulos 6911234567");
 //            array1.add("Marios Xenos 6944567387");
-
-            java.util.ArrayList<String> array2 = new java.util.ArrayList<>();
+//
+//            java.util.ArrayList<String> array2 = new java.util.ArrayList<>();
 //            array2.add("Gkrintzou");
 //            array2.add("Liaggou");
 //            array2.add("hat");
@@ -201,9 +178,8 @@ public class OkButtonHandle  {
 //            array2.add("hat");
 //            array2.add("hat");
 //            array2.add("hat");
-            Output.contacts(array1,array2);
-        }
-        else alert.close();
+//            Output.contacts(array1, array2);
+        } else alert.close();
     }
 }
 
